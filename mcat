@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+function usage() {
+  echo "Usage: mcat NAME..."
+}
+
+if [ "$#" -lt "1" ]; then
+  usage
+  echo "Too few arguments"
+  exit 1
+fi
+
+for name in "$@"; do
+  cat /dev/shm/"$name"
+done
